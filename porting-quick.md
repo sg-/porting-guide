@@ -70,7 +70,27 @@ To execute the tests you'll need to have support already added to [mbed-ls](http
 
 ###### All the others
 
-Getting to this point the HAL structure should be familiar as well as programming model. There are many more APIs to implement which are enabled by adding a ```device_has``` attribute to the MCU_NAME and then providing the implementation.
+Getting to this point the HAL structure should be familiar as well as programming model. There are many more APIs to implement which are enabled by adding a ```device_has``` attribute to the MCU_NAME and then providing the implementation. Other HAL drivers include:
+```
+"device_has": ["ANALOGIN", "I2C", "I2CSLAVE", "I2C_ASYNCH", "INTERRUPTIN", "LOWPOWERTIMER", "PORTIN", "PORTINOUT", "PORTOUT", "PWMOUT", "RTC", "SERIAL", "SERIAL_ASYNCH", "SERIAL_FC", "SLEEP", "SPI", "SPISLAVE", "SPI_ASYNCH"],
+
+device_has          api
+analog_in.h
+analog_out.h
+can_api.h
+emac_api.h
+gpio_irq_api.h
+i2c_api.h
+lp_ticker_api.h
+pinmap.h
+port_api.h
+pwmout_api.h
+rtc_api.h
+sleep_api.h
+spi_api.h
+trng_api.h
+
+```
 
 #### Adding a new board (or module)
 
