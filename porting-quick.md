@@ -32,7 +32,8 @@ Add the target description to ```mbed-os\targets\targets.json```
     "device_has": ["SERIAL", "STDIO_MESSAGES"]
 },
 "BOARD_NAME": {
-    "inherits": ["MCU_NAME"]
+    "inherits": ["MCU_NAME"],
+    "macros_add": []
 }
 ```
 
@@ -72,24 +73,21 @@ To execute the tests you'll need to already support [mbed-ls](https://github.com
 At this point, the HAL structure should be familiar as a programming model. There are many more APIs to implement, which are enabled by adding a ```device_has``` attribute to the MCU_NAME and then providing the implementation. Other HAL apis include but are not limited to:
 
 ```
-"device_has": ["ANALOGIN", "I2C", "I2CSLAVE", "I2C_ASYNCH", "INTERRUPTIN", "LOWPOWERTIMER", "PORTIN", "PORTINOUT", "PORTOUT", "PWMOUT", "RTC", "SERIAL", "SERIAL_ASYNCH", "SERIAL_FC", "SLEEP", "SPI", "SPISLAVE", "SPI_ASYNCH"],
-
-device_has          api
-analog_in.h
-analog_out.h
-can_api.h
-emac_api.h
-gpio_irq_api.h
-i2c_api.h
-lp_ticker_api.h
-pinmap.h
-port_api.h
-pwmout_api.h
-rtc_api.h
-sleep_api.h
-spi_api.h
-trng_api.h
-
+device_has       |   api
+-----------------|------------------
+ANALOGIN         |   analog_in.h
+ANALOGOUT        |   analog_out.h
+CAN              |   can_api.h
+EMAC             |   emac_api.h
+INTERRUPTIN      |   gpio_irq_api.h
+I2C I2CSLAVE     |   i2c_api.h
+LOWPOWERTIMER    |   lp_ticker_api.h
+PORT_IN PORT_OUT |   port_api.h
+PWMOUT           |   pwmout_api.h
+RTC              |   rtc_api.h
+SLEEP            |   sleep_api.h
+SPI SPISLAVE     |   spi_api.h
+TRNG             |  trng_api.h
 ```
 
 ## Adding a new board or module
